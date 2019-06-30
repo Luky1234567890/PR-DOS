@@ -1,0 +1,21 @@
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\bin\Debug\PR-DOS.exe.config
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\bin\Debug\PR-DOS.exe
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\bin\Debug\PR-DOS.pdb
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\bin\Debug\PR-DOS.xml
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR_DOS.Resources.resources
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR-DOS.vbproj.GenerateResource.cache
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR-DOS.vbproj.CoreCompileInputs.cache
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR-DOS.exe
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR-DOS.xml
+C:\Users\Lukáš Konečný\AppData\Local\Temporary Projects\PR-DOS\obj\Debug\PR-DOS.pdb
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Debug\PR-DOS.exe.config
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Debug\PR-DOS.exe
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Debug\PR-DOS.pdb
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Debug\PR-DOS.xml
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.vbprojAssemblyReference.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR_DOS.Resources.resources
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.vbproj.GenerateResource.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.vbproj.CoreCompileInputs.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.exe
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.xml
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Debug\PR-DOS.pdb

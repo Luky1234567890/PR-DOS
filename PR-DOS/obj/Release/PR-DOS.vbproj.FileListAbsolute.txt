@@ -1,0 +1,11 @@
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Release\PR-DOS.exe.config
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Release\PR-DOS.exe
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Release\PR-DOS.pdb
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\bin\Release\PR-DOS.xml
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.vbprojAssemblyReference.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR_DOS.Resources.resources
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.vbproj.GenerateResource.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.vbproj.CoreCompileInputs.cache
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.exe
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.xml
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.pdb
