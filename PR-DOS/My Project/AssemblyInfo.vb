@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -9,13 +10,13 @@ Imports System.Runtime.InteropServices
 ' Zkontrolujte hodnoty atributů sestavení.
 
 <Assembly: AssemblyTitle("PR-DOS")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("A CMD by Nelinka, supposed to be a DOS system in the future. PRRD")>
+<Assembly: AssemblyCompany("Nelinka")>
 <Assembly: AssemblyProduct("PR-DOS")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyCopyright("Copyright © Nelinka 2019")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Následující GUID se používá pro ID knihovny typů, pokud je tento projekt vystavený pro COM.
 <Assembly: Guid("ffc3361a-a53a-49d5-9b7a-1f24f2f3e428")>
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' pomocí zástupného znaku * takto:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.2.0.0")>
+<Assembly: AssemblyFileVersion("1.2.0.0")>
+<Assembly: NeutralResourcesLanguage("en")>
