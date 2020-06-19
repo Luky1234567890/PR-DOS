@@ -1,6 +1,6 @@
 ﻿Module Module1
     'The sub "Main" is the normal version of PR-DOS and is launched by default.
-    'While the sub "graphical" is the GPR-DOS, which can be launched from normal mode using the "graphical" command.
+    'While the sub "graphical" is GPR-DOS, which can be launched from normal mode using the "graphical" command.
     Sub Main()
 #Disable Warning BC42104
         Console.Clear()
@@ -11,28 +11,28 @@ brick:
             Console.WriteLine("prdos_settings AND RE-DOWNLOADING PR-DOS!")
             Console.WriteLine("Press ENTER to shutdown...")
             Dim wow = Console.ReadLine()
-            If wow = "pardon" Then
-                Call secret()
-            End If
             End
         End If
-        If My.Computer.FileSystem.FileExists("C:\nrun_clever.txt") = True Then
+        If My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_clever.txt") = True Then
 
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_original.txt") = True Then
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_original.txt") = True Then
 
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_besty.txt") = True Then
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_besty.txt") = True Then
 
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_xtreme.txt") = True Then
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_xtreme.txt") = True Then
 
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_nelpower.txt") = True Then
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_nelpower.txt") = True Then
 
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_server.txt") = True Then
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_server.txt") = True Then
 
         Else
             Console.WriteLine("A N-rUn BASE IS NEEDED FOR PR-DOS TO RUN! PLEASE GET A N-rUn BASE AND THEN RUN PR-DOS AGAIN.")
             Console.WriteLine("Press ENTER to shutdown...")
             Console.ReadLine()
             End
+        End If
+        If My.Computer.FileSystem.DirectoryExists("C:\prdos_settings") = False Then
+            My.Computer.FileSystem.CreateDirectory("C:\prdos_settings")
         End If
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\glaunch_prohibit.txt") = True Then
             GoTo prevent
@@ -44,7 +44,7 @@ prevent:
         Dim news As String
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\nodown.txt") = True Then
             news = "Prevented from downloading news."
-            GoTo fuck
+            GoTo ejcha
         End If
         Dim remoteUri As String = "http://nelinka.6te.net/prdos/news.txt"
         Dim fileName As String = "C:\news.txt"
@@ -55,35 +55,35 @@ prevent:
             client.DownloadFile(remoteUri, fileName)
         End Using
         news = My.Computer.FileSystem.ReadAllText("C:\news.txt")
-fuck:
+ejcha:
         Dim nrun As String
         Dim nrun_number As String
-        If My.Computer.FileSystem.FileExists("C:\nrun_clever.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_clever.txt")
+        If My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_clever.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_clever.txt")
             nrun = "N-rUn Clever "
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_original.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_original.txt")
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_original.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_original.txt")
             nrun = "N-rUn Original "
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_besty.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_besty.txt")
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_besty.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_besty.txt")
             nrun = "N-rUn BESTy "
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_xtreme.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_xtreme.txt")
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_xtreme.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_xtreme.txt")
             nrun = "N-rUn Xtreme "
-        ElseIf My.Computer.FileSystem.FileExists("C:\nrun_nelpower.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_nelpower.txt")
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_nelpower.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_nelpower.txt")
             nrun = "N-rUn NELPOWER "
-        ElseIf My.Computer.FileSystem.FileExists("C:\\nrun_server.txt") = True Then
-            nrun_number = My.Computer.FileSystem.ReadAllText("C:\nrun_server.txt")
+        ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_server.txt") = True Then
+            nrun_number = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\nrun_server.txt")
             nrun = "N-rUn Server_ "
         End If
         Dim modified As Boolean
         modified = False
         If nrun_number = "MODIFIED" Then
             modified = True
+            'using this boolean, PR-DOS can quickly find out if the current N-rUn base is modified.
         End If
 secretway:
-        Console.Clear()
         Console.ForegroundColor = ConsoleColor.Red
         Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         Console.WriteLine("X  OOO   OOO        OOOO    OOO    OOOO   X")
@@ -93,13 +93,12 @@ secretway:
         Console.WriteLine("X  O     O  O       OOOO    OOO    OOOO   X")
         Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         Console.ForegroundColor = ConsoleColor.White
-        Console.WriteLine("Normal MODE")
         Console.Write("Time: ")
         Console.ForegroundColor = ConsoleColor.Yellow
         Console.WriteLine(Now.ToShortTimeString)
         Console.ForegroundColor = ConsoleColor.White
         Console.WriteLine("----------------------")
-        Console.WriteLine("Bringing DOS back, by Nelinka. Ver. 1.2")
+        Console.WriteLine("Bringing DOS back, by Neltak. Ver. 1.4-dev1")
         Console.Write(nrun)
         Console.WriteLine(nrun_number)
         Console.WriteLine("-----------------------------------------------")
@@ -113,7 +112,7 @@ beginning:
         Console.Write("PR-DOS>")
         Dim theinput = Console.ReadLine()
         If theinput = "shutdown" Then
-            Console.WriteLine("shutdown>Ready to close PR-DOS! Press ENTER to close PR-DOS.")
+            Console.WriteLine("shutdown>Ready to shutdown PR-DOS! Press ENTER to shutdown PR-DOS.")
             Console.ReadLine()
             If My.Computer.FileSystem.FileExists("C:\prdos_settings\glaunch_prohibit.txt") = True Then
                 My.Computer.FileSystem.DeleteFile("C:\prdos_settings\glaunch_prohibit.txt")
@@ -123,19 +122,20 @@ beginning:
             Console.Clear()
             GoTo beginning
         ElseIf theinput = "help" Then
-            Console.WriteLine("help>shutdown = Closes PR-DOS.")
+            Console.WriteLine("help>shutdown = Shuts down PR-DOS.")
             Console.WriteLine("help>clear = Clears the console.")
             Console.WriteLine("help>help = Lists all avaiable commands. (Currently in use)")
             Console.WriteLine("help>restart = Restarts the console.")
             Console.WriteLine("help>about = About PR-DOS and Nelinka.")
             Console.WriteLine("help>graphical = Launches GPR-DOS.")
-            Console.WriteLine("help>settings = The settings for PR-DOS and boot/launch.")
+            Console.WriteLine("help>settings = The settings for PR-DOS.")
             Console.WriteLine("help>run = Runs a PR-DOS program you desire.")
             Console.WriteLine("help>delete = Deletes a file you desire.")
             Console.WriteLine("help>rename = Renames a file you desire.")
             Console.WriteLine("help>dir = Opens a directory you desire.")
             Console.WriteLine("help>createtxt = Creates a TXT file where you want, including what you want.")
             Console.WriteLine("help>server = Helps manage a server running a N-rUn Server_ base.")
+            Console.WriteLine("help>modifymenu = Special menu for modified N-rUn bases.")
             GoTo beginning
         ElseIf theinput = "restart" Then
             If My.Computer.FileSystem.FileExists("C:\prdos_settings\glaunch_prohibit.txt") = True Then
@@ -143,19 +143,13 @@ beginning:
             End If
             Call Main()
         ElseIf theinput = "about" Then
-            Console.WriteLine("about>PR-DOS made by Nelinka.")
-            Console.WriteLine("about>Ver. 1.2 -- CHANGELOG")
+            Console.WriteLine("about>PR-DOS © Neltak 2020")
+            Console.WriteLine("about>Ver. 1.4-dev1 -- CHANGELOG")
             Console.WriteLine("about>-----------------------------------")
-            Console.WriteLine("about>Added a setting.")
-            Console.WriteLine("about>Added a cool title with some help! Thanks!")
-            Console.WriteLine("about>Added commands 'dir', 'createtxt' and 'server'.")
-            Console.WriteLine("about>Implemented N-rUn bases.")
-            Console.WriteLine("about>Implemented a brick system.")
-            Console.WriteLine("about>Added double-check to the 'delete' command.")
-            Console.WriteLine("about>Added the clock to normal mode too. :D")
-            Console.WriteLine("about>You can now MODIFY your N-rUn Base! :D In the next update or dev-release, it will be good for something!")
-            Console.WriteLine("about>Also you can now prevent the news from downloading.")
-            Console.WriteLine("about>Bug fixes.")
+            Console.WriteLine("about>Finished commands 'server' and 'modifymenu'.")
+            Console.WriteLine("about>Changed the About screen a bit.")
+            Console.WriteLine("about>Changed last lines that still included Nelinka to Neltak.")
+            Console.WriteLine("about>Added a failsafe in any case lol")
             GoTo beginning
         ElseIf theinput = "graphical" Then
             Call graphical()
@@ -187,6 +181,7 @@ beginning:
                 GoTo beginning
             End If
             Dim program = My.Computer.FileSystem.ReadAllText(filepath)
+            ' For Svojetín: You had the idea to make some programs brick PR-DOS if they aren't geniue.
             Console.WriteLine(program)
             GoTo beginning
         ElseIf theinput = "delete" Then
@@ -236,19 +231,35 @@ beginning:
             GoTo beginning
         ElseIf theinput = "server" Then
             If nrun = "N-rUn Server_ " Then
-                Console.WriteLine("server>This command is preparing, but thanks for choosing the N-rUn Server_!")
+                Console.Write("server>PR-DOS isn't capable of running a server.")
+                Console.WriteLine(" Yet...")
                 GoTo beginning
             Else
-                Console.WriteLine("server>You need the N-rUn Server_ Base in order to use this command!")
-                GoTo beginning
+                My.Computer.FileSystem.WriteAllText("C:\prdos_settings\errorcode.txt", "NONRUN02", False)
+                Call emergency()
             End If
         ElseIf theinput = "brick" Then
             My.Computer.FileSystem.WriteAllText("C:\prdos_settings\bricked.txt", "bricked", False)
             GoTo brick
+        ElseIf theinput = "crash" Then
+            My.Computer.FileSystem.WriteAllText("C:\prdos_settings\errorcode.txt", "MANUAL", False)
+            Call emergency()
+        ElseIf theinput = "modifymenu" Then
+            If modified = False Then
+                My.Computer.FileSystem.WriteAllText("C:\prdos_settings\errorcode.txt", "NONRUN01", False)
+                Call emergency()
+            Else
+                Console.WriteLine("---  N-rUn Menu for modified bases ---")
+                Console.WriteLine("!!! WARNING: Using a modified N-rUn base might lead to bricks. !!!")
+                Console.WriteLine("")
+                GoTo beginning
+            End If
         Else
             Console.WriteLine("PR-DOS>This command does not exist!")
             GoTo beginning
         End If
+        My.Computer.FileSystem.WriteAllText("C:\prdos_settings\errorcode.txt", "ENDSUB", False)
+        Call emergency()
     End Sub
     Sub graphical()
         Console.Clear()
@@ -281,8 +292,8 @@ beginning:
         Console.WriteLine("/           The graphical version of PR-DOS.                    /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
-        Console.WriteLine("/          Copyright © Nelinka 2019                             /")
-        Console.WriteLine("/          Copyright © Nelinka Software Development 2019        /")
+        Console.WriteLine("/          Copyright © Neltak 2020                              /")
+        Console.WriteLine("/          Copyright © Neltak Software Development 2020         /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine(nrun)
         Console.WriteLine("/////////////////////////////////////////////////////////////////")
@@ -387,8 +398,8 @@ shutdown:
         Console.WriteLine("/           The graphical version of PR-DOS.                    /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
-        Console.WriteLine("/          Copyright © Nelinka 2019                             /")
-        Console.WriteLine("/          Copyright © Nelinka Software Development 2019        /")
+        Console.WriteLine("/          Copyright © Neltak 2020                              /")
+        Console.WriteLine("/          Copyright © Neltak Software Development 2020         /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine(nrun)
         Console.WriteLine("/////////////////////////////////////////////////////////////////")
@@ -402,11 +413,18 @@ shutdown:
         End If
         Call Main()
     End Sub
-    Sub secret()
-        Console.WriteLine("Oh! Hello there! Welcome to the secret of PR-DOS! OOOOH!")
-        Console.WriteLine("There will be more in the future!")
-        Console.WriteLine("Okay! Bye!")
+    Sub emergency()
+        Console.Clear()
+        Dim errcode = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\errorcode.txt")
+        Console.ForegroundColor = ConsoleColor.DarkRed
+        Console.BackgroundColor = ConsoleColor.Blue
+        Console.WriteLine("An exception has occured that PR-DOS cannot fix by it's own, so it crashed.")
+        Console.Write("Error code: ")
+        Console.Write(errcode)
+        Console.WriteLine(" --- Please contact Neltak with this code.")
+        Console.WriteLine("QUICK FIX TIP: Check your local files for errors. Check when the crash happened and check for any errors with the command that caused it.")
+        Console.WriteLine("Since PR-DOS cannot continue, press ENTER to shutdown. . .")
         Console.ReadLine()
-        Call Main()
+        End
     End Sub
 End Module

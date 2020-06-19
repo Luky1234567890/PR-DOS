@@ -8,3 +8,4 @@ C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.vbproj.GenerateResou
 C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.exe
 C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.xml
 C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.pdb
+C:\Users\Lukáš Konečný\PR-DOS\PR-DOS\obj\Release\PR-DOS.vbproj.CoreCompileInputs.cache
