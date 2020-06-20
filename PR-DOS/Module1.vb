@@ -13,6 +13,7 @@ brick:
             Dim wow = Console.ReadLine()
             End
         End If
+        'Idea: Instead of using TXT files, use your own file extension (.nft = Neltak File Type)
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_clever.txt") = True Then
 
         ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_original.txt") = True Then
@@ -98,7 +99,7 @@ secretway:
         Console.WriteLine(Now.ToShortTimeString)
         Console.ForegroundColor = ConsoleColor.White
         Console.WriteLine("----------------------")
-        Console.WriteLine("Bringing DOS back, by Neltak. Ver. 1.4-dev1")
+        Console.WriteLine("Bringing DOS back, by Neltak.")
         Console.Write(nrun)
         Console.WriteLine(nrun_number)
         Console.WriteLine("-----------------------------------------------")
@@ -130,10 +131,12 @@ beginning:
             Console.WriteLine("help>graphical = Launches GPR-DOS.")
             Console.WriteLine("help>settings = The settings for PR-DOS.")
             Console.WriteLine("help>run = Runs a PR-DOS program you desire.")
+            Console.WriteLine("help>open = Opens any file/app.")
             Console.WriteLine("help>delete = Deletes a file you desire.")
             Console.WriteLine("help>rename = Renames a file you desire.")
             Console.WriteLine("help>dir = Opens a directory you desire.")
-            Console.WriteLine("help>createtxt = Creates a TXT file where you want, including what you want.")
+            Console.WriteLine("help>create = Creates a file where you want, including what you want.")
+            Console.WriteLine("help>mkdir = Creates a directory of your choice.")
             Console.WriteLine("help>server = Helps manage a server running a N-rUn Server_ base.")
             Console.WriteLine("help>modifymenu = Special menu for modified N-rUn bases.")
             GoTo beginning
@@ -144,12 +147,16 @@ beginning:
             Call Main()
         ElseIf theinput = "about" Then
             Console.WriteLine("about>PR-DOS © Neltak 2020")
+            Console.WriteLine("about>PR-DOS © Neltak Software Development 2020")
             Console.WriteLine("about>Ver. 1.4-dev1 -- CHANGELOG")
             Console.WriteLine("about>-----------------------------------")
             Console.WriteLine("about>Finished commands 'server' and 'modifymenu'.")
+            Console.WriteLine("about>Changed command 'createtxt' to 'create'.")
+            Console.WriteLine("about>Added commands 'mkdir' and 'open'.")
             Console.WriteLine("about>Changed the About screen a bit.")
             Console.WriteLine("about>Changed last lines that still included Nelinka to Neltak.")
             Console.WriteLine("about>Added a failsafe in any case lol")
+            Console.WriteLine("about>Enhanced crash screen.")
             GoTo beginning
         ElseIf theinput = "graphical" Then
             Call graphical()
@@ -182,7 +189,18 @@ beginning:
             End If
             Dim program = My.Computer.FileSystem.ReadAllText(filepath)
             ' For Svojetín: You had the idea to make some programs brick PR-DOS if they aren't geniue.
+            ' Idea: Make these programs actually do something: make it like your own programming launguage
             Console.WriteLine(program)
+            GoTo beginning
+        ElseIf theinput = "open" Then
+            Console.WriteLine("open>Please enter the file path:")
+            Dim apppath = Console.ReadLine()
+            If My.Computer.FileSystem.FileExists(apppath) = False Then
+                Console.WriteLine("open>Error! Please check if the file exists in the path you entered.")
+                GoTo beginning
+            End If
+            Process.Start(apppath)
+            Console.WriteLine("open>Opened the fiĺe in the path you entered.")
             GoTo beginning
         ElseIf theinput = "delete" Then
             Console.WriteLine("delete>Please enter the file path:")
@@ -221,13 +239,23 @@ beginning:
             Process.Start(filepath)
             Console.WriteLine("dir>Opened the directory in the path you entered.")
             GoTo beginning
-        ElseIf theinput = "createtxt" Then
-            Console.WriteLine("createtxt>Please enter the filepath:")
+        ElseIf theinput = "create" Then
+            Console.WriteLine("create>Please enter the filepath:")
             Dim filepath = Console.ReadLine()
-            Console.WriteLine("createtxt>Please enter the text that will the TXT contain:")
+            Console.WriteLine("create>Please enter the text that the file will contain:")
             Dim text = Console.ReadLine()
             My.Computer.FileSystem.WriteAllText(filepath, text, False)
-            Console.WriteLine("createtxt>Created a TXT file.")
+            Console.WriteLine("create>Created a file.")
+            GoTo beginning
+        ElseIf theinput = "mkdir" Then
+            Console.WriteLine("mkdir>Please enter the filepath of the directory you want to create (including it's name):")
+            Dim dirpath = Console.ReadLine()
+            If My.Computer.FileSystem.DirectoryExists(dirpath) = True Then
+                Console.WriteLine("mkdir>Error! This directory already exists!")
+                GoTo beginning
+            End If
+            My.Computer.FileSystem.CreateDirectory(dirpath)
+            Console.WriteLine("mkdir>Created a directory.")
             GoTo beginning
         ElseIf theinput = "server" Then
             If nrun = "N-rUn Server_ " Then
@@ -418,11 +446,11 @@ shutdown:
         Dim errcode = My.Computer.FileSystem.ReadAllText("C:\prdos_settings\errorcode.txt")
         Console.ForegroundColor = ConsoleColor.DarkRed
         Console.BackgroundColor = ConsoleColor.Blue
-        Console.WriteLine("An exception has occured that PR-DOS cannot fix by it's own, so it crashed.")
+        Console.WriteLine("An exception has occured that PR-DOS cannot fix by it's own, so it crashed to prevent any damage.")
         Console.Write("Error code: ")
         Console.Write(errcode)
         Console.WriteLine(" --- Please contact Neltak with this code.")
-        Console.WriteLine("QUICK FIX TIP: Check your local files for errors. Check when the crash happened and check for any errors with the command that caused it.")
+        Console.WriteLine("Addinitional information: 0x00005892NOSP &]ł][ĐđĐ&@{][Đđđđ|Đ[]*ß×¤ß*>$*ß¤×~ˇ^˘°˛`")
         Console.WriteLine("Since PR-DOS cannot continue, press ENTER to shutdown. . .")
         Console.ReadLine()
         End
