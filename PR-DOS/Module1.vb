@@ -129,7 +129,7 @@ beginning:
             Call Main()
         ElseIf theinput = "about" Then
             Console.WriteLine("about>PR-DOS © Actori 2021")
-            Console.WriteLine("about>Ver. 1.4-dev1 -- CHANGELOG")
+            Console.WriteLine("about>Ver. 1.4-dev2 -- CHANGELOG")
             Console.WriteLine("about>-----------------------------------")
             Console.WriteLine("about>Changed branding Neltak to Actori.")
             Console.WriteLine("about>Changed year from 2020 to 2021. Happy New Year! <3")
