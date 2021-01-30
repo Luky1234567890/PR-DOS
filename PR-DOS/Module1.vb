@@ -10,10 +10,10 @@ brick:
             Console.WriteLine("YOUR PR-DOS SYSTEM IS BRICKED! PLEASE REINSTALL PR-DOS BY DELETING THE FOLDER")
             Console.WriteLine("prdos_settings AND RE-DOWNLOADING PR-DOS!")
             Console.WriteLine("Press ENTER to shutdown...")
-            Dim wow = Console.ReadLine()
+            Dim wow = Console.ReadKey(True)
             End
         End If
-        'Idea: Instead of using TXT files, use your own file extension (.nft = Neltak File Type)
+        'Idea: Instead of using TXT files, use your own file extension (.aft = Actori File Type)
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_clever.txt") = True Then
 
         ElseIf My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_original.txt") = True Then
@@ -29,7 +29,7 @@ brick:
         Else
             Console.WriteLine("A N-rUn BASE IS NEEDED FOR PR-DOS TO RUN! PLEASE GET A N-rUn BASE AND THEN RUN PR-DOS AGAIN.")
             Console.WriteLine("Press ENTER to shutdown...")
-            Console.ReadLine()
+            Console.ReadKey(True)
             End
         End If
         If My.Computer.FileSystem.DirectoryExists("C:\prdos_settings") = False Then
@@ -42,21 +42,6 @@ brick:
             Call graphical()
         End If
 prevent:
-        Dim news As String
-        If My.Computer.FileSystem.FileExists("C:\prdos_settings\nodown.txt") = True Then
-            news = "Prevented from downloading news."
-            GoTo ejcha
-        End If
-        Dim remoteUri As String = "http://nelinka.6te.net/prdos/news.txt"
-        Dim fileName As String = "C:\news.txt"
-
-        Using client As New System.Net.WebClient()
-
-            client.Credentials = New System.Net.NetworkCredential
-            client.DownloadFile(remoteUri, fileName)
-        End Using
-        news = My.Computer.FileSystem.ReadAllText("C:\news.txt")
-ejcha:
         Dim nrun As String
         Dim nrun_number As String
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\nrun_clever.txt") = True Then
@@ -99,22 +84,19 @@ secretway:
         Console.WriteLine(Now.ToShortTimeString)
         Console.ForegroundColor = ConsoleColor.White
         Console.WriteLine("----------------------")
-        Console.WriteLine("Bringing DOS back, by Neltak.")
+        Console.WriteLine("Bringing DOS back, by Actori.")
         Console.Write(nrun)
         Console.WriteLine(nrun_number)
         Console.WriteLine("-----------------------------------------------")
         Console.WriteLine("TIP: If you want PR-DOS to look real, press F11! (or FN+F11)")
         Console.WriteLine("Are you lost? Enter 'help' in the CMD to get a list of commands!")
         Console.WriteLine("-----------------------------------------------")
-        Console.Write("PR-DOS News: ")
-        Console.WriteLine(news)
-        Console.WriteLine("-----------------------------------------------")
 beginning:
         Console.Write("PR-DOS>")
         Dim theinput = Console.ReadLine()
         If theinput = "shutdown" Then
             Console.WriteLine("shutdown>Ready to shutdown PR-DOS! Press ENTER to shutdown PR-DOS.")
-            Console.ReadLine()
+            Console.ReadKey(True)
             If My.Computer.FileSystem.FileExists("C:\prdos_settings\glaunch_prohibit.txt") = True Then
                 My.Computer.FileSystem.DeleteFile("C:\prdos_settings\glaunch_prohibit.txt")
             End If
@@ -146,17 +128,12 @@ beginning:
             End If
             Call Main()
         ElseIf theinput = "about" Then
-            Console.WriteLine("about>PR-DOS © Neltak 2020")
-            Console.WriteLine("about>PR-DOS © Neltak Software Development 2020")
+            Console.WriteLine("about>PR-DOS © Actori 2021")
             Console.WriteLine("about>Ver. 1.4-dev1 -- CHANGELOG")
             Console.WriteLine("about>-----------------------------------")
-            Console.WriteLine("about>Finished commands 'server' and 'modifymenu'.")
-            Console.WriteLine("about>Changed command 'createtxt' to 'create'.")
-            Console.WriteLine("about>Added commands 'mkdir' and 'open'.")
-            Console.WriteLine("about>Changed the About screen a bit.")
-            Console.WriteLine("about>Changed last lines that still included Nelinka to Neltak.")
-            Console.WriteLine("about>Added a failsafe in any case lol")
-            Console.WriteLine("about>Enhanced crash screen.")
+            Console.WriteLine("about>Changed branding Neltak to Actori.")
+            Console.WriteLine("about>Changed year from 2020 to 2021. Happy New Year! <3")
+            Console.WriteLine("about>The 'Press any key' dialouges now use better technology.")
             GoTo beginning
         ElseIf theinput = "graphical" Then
             Call graphical()
@@ -320,15 +297,15 @@ beginning:
         Console.WriteLine("/           The graphical version of PR-DOS.                    /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
-        Console.WriteLine("/          Copyright © Neltak 2020                              /")
-        Console.WriteLine("/          Copyright © Neltak Software Development 2020         /")
+        Console.WriteLine("/               Copyright © Actori 2020                         /")
+        Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine(nrun)
         Console.WriteLine("/////////////////////////////////////////////////////////////////")
         Console.Write("Booting up...")
         Threading.Thread.Sleep(5000)
         Console.WriteLine("Booted, press ENTER to continue...")
-        Console.ReadLine()
+        Console.ReadKey(True)
 desktop_time_clear:
         Console.Clear()
         Console.WriteLine("/////////////////////////////////////////////////////////////////")
@@ -426,8 +403,8 @@ shutdown:
         Console.WriteLine("/           The graphical version of PR-DOS.                    /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
-        Console.WriteLine("/          Copyright © Neltak 2020                              /")
-        Console.WriteLine("/          Copyright © Neltak Software Development 2020         /")
+        Console.WriteLine("/               Copyright © Actori 2020                         /")
+        Console.WriteLine("/                                                               /")
         Console.WriteLine("/                                                               /")
         Console.WriteLine(nrun)
         Console.WriteLine("/////////////////////////////////////////////////////////////////")
@@ -435,7 +412,7 @@ shutdown:
         Threading.Thread.Sleep(5000)
         Console.WriteLine("Shutted down, press ENTER to go to PR-DOS..")
         My.Computer.FileSystem.WriteAllText("C:\prdos_settings\glaunch_prohibit.txt", "prohibited", False)
-        Console.ReadLine()
+        Console.ReadKey(True)
         If My.Computer.FileSystem.FileExists("C:\prdos_settings\noshut.txt") = True Then
             My.Computer.FileSystem.DeleteFile("C:\prdos_settings\noshut.txt")
         End If
@@ -449,10 +426,10 @@ shutdown:
         Console.WriteLine("An exception has occured that PR-DOS cannot fix by it's own, so it crashed to prevent any damage.")
         Console.Write("Error code: ")
         Console.Write(errcode)
-        Console.WriteLine(" --- Please contact Neltak with this code.")
+        Console.WriteLine(" --- Please contact Actori with this code.")
         Console.WriteLine("Addinitional information: 0x00005892NOSP &]ł][ĐđĐ&@{][Đđđđ|Đ[]*ß×¤ß*>$*ß¤×~ˇ^˘°˛`")
         Console.WriteLine("Since PR-DOS cannot continue, press ENTER to shutdown. . .")
-        Console.ReadLine()
+        Console.ReadKey(True)
         End
     End Sub
 End Module
